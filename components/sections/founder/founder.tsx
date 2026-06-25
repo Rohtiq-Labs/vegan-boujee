@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ASSETS } from "@/data/assets";
 import { CHANTEL } from "@/data/site-content";
+import { ImageReveal } from "@/components/ui/image-reveal";
 import { MediaVisual } from "@/components/ui/media-visual";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -11,9 +12,9 @@ export const Founder = (): React.JSX.Element => {
         Chantel
       </div>
       <div className="founder-inner">
-        <Reveal className="founder-portrait">
+        <ImageReveal className="founder-portrait" variant="image-left" delay={1}>
           <div className="founder-accent-line" aria-hidden />
-          <div className="founder-portrait-frame">
+          <div className="founder-portrait-frame interactive-media">
             <MediaVisual
               src={ASSETS.founder}
               ariaLabel="Chantel Justene, founder of Vegan and Boujee"
@@ -22,12 +23,12 @@ export const Founder = (): React.JSX.Element => {
           <p className="founder-portrait-caption">
             {CHANTEL.handle} · Founder &amp; Stylist
           </p>
-        </Reveal>
+        </ImageReveal>
         <div className="founder-text">
-          <Reveal>
+          <Reveal variant="text">
             <p className="section-label">From Chantel</p>
           </Reveal>
-          <Reveal delay={1}>
+          <Reveal variant="text" delay={1}>
             <h2>
               I Didn&apos;t Build a Salon.
               <br />
@@ -36,7 +37,7 @@ export const Founder = (): React.JSX.Element => {
               to <em>Come Home</em> to Themselves.
             </h2>
           </Reveal>
-          <Reveal delay={2}>
+          <Reveal variant="text" delay={2}>
             <p className="founder-letter">
               Hey love — I&apos;m Chantel. I started Vegan &amp; Boujee because
               I was tired of the beauty industry telling women they had to pick
@@ -44,7 +45,7 @@ export const Founder = (): React.JSX.Element => {
               kind-hearted.
             </p>
           </Reveal>
-          <Reveal delay={3}>
+          <Reveal variant="text" delay={3}>
             <div className="founder-quote founder-quote--signature">
               <blockquote>
                 &ldquo;{CHANTEL.signatureQuote}&rdquo;
@@ -52,8 +53,8 @@ export const Founder = (): React.JSX.Element => {
               <cite>— {CHANTEL.name}</cite>
             </div>
           </Reveal>
-          <Reveal delay={4}>
-            <Link href="/about" className="founder-story-link">
+          <Reveal variant="fade" delay={4}>
+            <Link href="/about" className="founder-story-link motion-glow">
               Read the full story →
             </Link>
           </Reveal>

@@ -1,4 +1,5 @@
 import { GALLERY } from "@/data/gallery-content";
+import { ImageReveal } from "@/components/ui/image-reveal";
 import { MediaVisual } from "@/components/ui/media-visual";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -7,26 +8,32 @@ export const GalleryStories = (): React.JSX.Element => {
 
   return (
     <section className="gl-stories" aria-labelledby="gl-stories-label">
-      <Reveal>
+      <Reveal variant="text">
         <p className="section-label section-label--on-dark" id="gl-stories-label">
           {stories.label}
         </p>
       </Reveal>
       <div className="gl-stories-list">
         {stories.items.map((story, index) => (
-          <Reveal
-            key={story.narrative}
-            delay={(index % 5) as 0 | 1 | 2 | 3 | 4}
-            className={`gl-story gl-story--${index % 2}`}
-          >
-            <div className="gl-story-visual">
-              <MediaVisual src={story.src} ariaLabel={story.ariaLabel} />
-            </div>
-            <div className="gl-story-copy">
+          <div key={story.narrative} className={`gl-story gl-story--${index % 2}`}>
+            <ImageReveal
+              delay={(index % 5) as 0 | 1 | 2 | 3 | 4}
+              variant={index % 2 === 0 ? "image-left" : "image-right"}
+              className="gl-story-visual-wrap"
+            >
+              <div className="gl-story-visual interactive-media">
+                <MediaVisual src={story.src} ariaLabel={story.ariaLabel} />
+              </div>
+            </ImageReveal>
+            <Reveal
+              delay={(index % 5) as 0 | 1 | 2 | 3 | 4}
+              variant="text"
+              className="gl-story-copy"
+            >
               <p className="gl-story-narrative">{story.narrative}</p>
               <span className="gl-story-feeling">{story.feeling}</span>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         ))}
       </div>
     </section>

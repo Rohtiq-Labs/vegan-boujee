@@ -22,7 +22,7 @@ export const AboutBeginning = (): React.JSX.Element => {
         <Reveal delay={2} className="ab-beginning-visual">
           <MediaVisual
             src={beginning.visual}
-            ariaLabel="Vegan and Boujee studio moment"
+            ariaLabel="Chantel and the Vegan and Boujee team"
           />
         </Reveal>
         <Reveal delay={2}>

@@ -1,5 +1,8 @@
+"use client";
+
 import { ASSETS } from "@/data/assets";
 import { clientMoments, type ClientMoment } from "@/data/site-content";
+import { ImageReveal } from "@/components/ui/image-reveal";
 import { MediaVisual } from "@/components/ui/media-visual";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -13,25 +16,26 @@ export const ClientMoments = (): React.JSX.Element => {
   return (
     <section className="client-moments" id="moments" aria-labelledby="moments-label">
       <div className="moments-inner">
-        <Reveal>
+        <Reveal variant="text">
           <p className="section-label" id="moments-label">
             What It Feels Like
           </p>
         </Reveal>
         <div className="moments-layout">
-          <div className="moments-visual" aria-hidden>
-            <div className="moments-visual-frame">
+          <ImageReveal className="moments-visual" variant="image-left" delay={1}>
+            <div className="moments-visual-frame interactive-media">
               <MediaVisual
                 src={ASSETS.clientMoments}
                 ariaLabel="Client moment"
               />
             </div>
-          </div>
+          </ImageReveal>
           <div className="moments-journal">
             {clientMoments.map((moment, index) => (
               <Reveal
                 key={moment.quote}
                 delay={(index % 5) as 0 | 1 | 2 | 3 | 4}
+                variant="text"
                 className={`moment-entry ${toneClass[moment.tone]} moment-entry--${index % 3}`}
               >
                 <blockquote>&ldquo;{moment.quote}&rdquo;</blockquote>

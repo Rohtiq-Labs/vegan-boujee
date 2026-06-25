@@ -13,7 +13,7 @@ export const GalleryFeatured = (): React.JSX.Element => {
 
   return (
     <section className="gl-featured" aria-labelledby="gl-featured-label">
-      <Reveal>
+      <Reveal variant="text">
         <p className="section-label" id="gl-featured-label">
           {featured.label}
         </p>
@@ -22,10 +22,11 @@ export const GalleryFeatured = (): React.JSX.Element => {
         {featured.pieces.map((piece, index) => (
           <Reveal
             key={piece.label}
+            variant="fade"
             delay={(index % 5) as 0 | 1 | 2 | 3 | 4}
-            className={`gl-piece ${layoutClass[piece.layout]}`}
+            className={`gl-piece motion-lift ${layoutClass[piece.layout]}`}
           >
-            <div className="gl-piece-media">
+            <div className="gl-piece-media interactive-media">
               <MediaVisual src={piece.src} ariaLabel={piece.ariaLabel} />
             </div>
             <div className="gl-piece-caption">

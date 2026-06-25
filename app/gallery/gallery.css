@@ -201,12 +201,43 @@
   background: var(--blush-soft);
 }
 
+.gl-piece.reveal--fade {
+  opacity: 0;
+}
+
+.gl-piece.reveal--fade.visible {
+  opacity: 1;
+}
+
+.gl-story-visual-wrap {
+  width: 100%;
+}
+
+.gl-story-visual-wrap .image-reveal__frame,
+.gl-story-visual-wrap .image-reveal__inner,
+.gl-story-visual-wrap .parallax-layer {
+  height: 100%;
+}
+
+.gl-reimagined-item .image-reveal__frame,
+.gl-reimagined-item .image-reveal__inner,
+.gl-reimagined-item .parallax-layer {
+  height: 100%;
+}
+
+.moments-visual .image-reveal__frame,
+.moments-visual .image-reveal__inner,
+.moments-visual .parallax-layer {
+  height: 100%;
+}
+
 .gl-piece-media {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   min-height: 280px;
   aspect-ratio: 3/4;
-  position: relative;
   overflow: hidden;
 }
 
@@ -246,6 +277,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   padding: 48px 20px 20px;
   background: linear-gradient(to top, rgba(45, 36, 31, 0.85), transparent);
   display: flex;
@@ -440,6 +472,15 @@
     gap: 16px;
   }
 
+  .gl-aesthetic-cell {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .gl-aesthetic-media {
+    min-height: 100%;
+  }
+
   .gl-aesthetic-cell--0 {
     grid-column: 1;
     grid-row: 1 / 3;
@@ -468,11 +509,21 @@
   min-height: 200px;
 }
 
+.gl-aesthetic-cell.reveal--fade {
+  opacity: 0;
+}
+
+.gl-aesthetic-cell.reveal--fade.visible {
+  opacity: 1;
+}
+
 .gl-aesthetic-media {
   position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   min-height: inherit;
+  overflow: hidden;
 }
 
 .gl-aesthetic-media .media-video,
@@ -494,6 +545,7 @@
   position: absolute;
   bottom: 16px;
   left: 16px;
+  z-index: 1;
   font-family: var(--serif);
   font-size: 0.95rem;
   font-style: italic;

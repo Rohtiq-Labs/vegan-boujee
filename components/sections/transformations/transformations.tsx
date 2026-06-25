@@ -71,10 +71,10 @@ export const Transformations = (): React.JSX.Element => {
     <section className="transformations" id="work">
       <div className="transform-header">
         <div className="transform-header-text">
-          <Reveal>
+          <Reveal variant="text">
             <p className="section-label section-label--light">The Work</p>
           </Reveal>
-          <Reveal delay={1}>
+          <Reveal variant="text" delay={1}>
             <h2>
               The Version of You
               <br />
@@ -85,8 +85,8 @@ export const Transformations = (): React.JSX.Element => {
       </div>
       <div className="carousel-track" id="carousel" ref={trackRef}>
         {transformStories.map((story) => (
-          <article key={story.theme} className="transform-card">
-            <div className="card-media">
+          <article key={story.theme} className="transform-card motion-lift">
+            <div className="card-media interactive-media">
               <MediaVisual src={story.src} ariaLabel={story.ariaLabel} />
             </div>
             <div className="card-overlay">

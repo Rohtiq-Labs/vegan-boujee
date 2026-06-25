@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/ui/brand-logo";
+import { InstagramIcon, TikTokIcon } from "@/components/ui/social-icons";
+import { SALON } from "@/data/salon";
 
 type FooterProps = {
   variant?: "home" | "about" | "services" | "contact" | "gallery";
@@ -103,25 +105,27 @@ export const Footer = ({
         </ul>
         <div className="footer-social">
           <a
-            href="https://www.instagram.com/veganandboujee/"
+            href={SALON.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
+            aria-label="Follow Vegan and Boujee on Instagram"
           >
-            IG
+            <InstagramIcon />
           </a>
           <a
-            href="http://www.tiktok.com/veganandboujee"
+            href="https://www.tiktok.com/@veganandboujee"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
+            aria-label="Follow Vegan and Boujee on TikTok"
           >
-            TK
+            <TikTokIcon />
           </a>
         </div>
       </div>
       <div className="footer-bottom">
-        © 2025 Vegan &amp; Boujee. All rights reserved.
+        © 2026 Vegan &amp; Boujee. All rights reserved.
       </div>
     </footer>
   );

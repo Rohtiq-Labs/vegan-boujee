@@ -1,6 +1,9 @@
+"use client";
+
 import { BOOKING_URL, SERVICES } from "@/data/services-content";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { MediaVisual } from "@/components/ui/media-visual";
+import { ParallaxLayer } from "@/components/ui/parallax-layer";
 import { Reveal } from "@/components/ui/reveal";
 
 export const ServicesHero = (): React.JSX.Element => {
@@ -9,27 +12,29 @@ export const ServicesHero = (): React.JSX.Element => {
   return (
     <section className="sv-hero" aria-labelledby="sv-hero-title">
       <div className="sv-hero-media" aria-hidden>
-        <MediaVisual src={hero.visual} ariaLabel="Vegan and Boujee experiences" />
+        <ParallaxLayer speed={0.18}>
+          <MediaVisual src={hero.visual} ariaLabel="Vegan and Boujee experiences" />
+        </ParallaxLayer>
         <div className="sv-hero-shade" />
       </div>
       <div className="sv-hero-text">
-        <Reveal>
+        <Reveal variant="text">
           <p className="section-label section-label--on-dark">{hero.label}</p>
         </Reveal>
-        <Reveal delay={1}>
+        <Reveal variant="text" delay={1}>
           <h1 id="sv-hero-title" className="sv-hero-title">
             {hero.headline}
             <br />
             <em>{hero.headlineEm}</em>
           </h1>
         </Reveal>
-        <Reveal delay={2}>
+        <Reveal variant="text" delay={2}>
           <p className="sv-hero-support">{hero.support}</p>
         </Reveal>
-        <Reveal delay={3}>
+        <Reveal variant="fade" delay={3}>
           <a
             href={BOOKING_URL}
-            className="btn-primary"
+            className="btn-primary motion-glow"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -1,6 +1,9 @@
+"use client";
+
 import { GALLERY } from "@/data/gallery-content";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { MediaVisual } from "@/components/ui/media-visual";
+import { ParallaxLayer } from "@/components/ui/parallax-layer";
 import { Reveal } from "@/components/ui/reveal";
 
 export const GalleryHero = (): React.JSX.Element => {
@@ -9,21 +12,23 @@ export const GalleryHero = (): React.JSX.Element => {
   return (
     <section className="gl-hero" aria-labelledby="gl-hero-title">
       <div className="gl-hero-media" aria-hidden>
-        <MediaVisual src={hero.visual} ariaLabel="Vegan and Boujee gallery" />
+        <ParallaxLayer speed={0.18}>
+          <MediaVisual src={hero.visual} ariaLabel="Vegan and Boujee gallery" />
+        </ParallaxLayer>
         <div className="gl-hero-shade" />
       </div>
       <div className="gl-hero-text">
-        <Reveal>
+        <Reveal variant="text">
           <p className="section-label section-label--on-dark">{hero.label}</p>
         </Reveal>
-        <Reveal delay={1}>
+        <Reveal variant="text" delay={1}>
           <h1 id="gl-hero-title" className="gl-hero-title">
             {hero.headline}
             <br />
             <em>{hero.headlineEm}</em>
           </h1>
         </Reveal>
-        <Reveal delay={2}>
+        <Reveal variant="text" delay={2}>
           <p className="gl-hero-support">{hero.support}</p>
         </Reveal>
       </div>

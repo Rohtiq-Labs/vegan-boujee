@@ -41,7 +41,7 @@ export const ABOUT = {
         text: "Every appointment is intentional. Every formula is cruelty-free. Every woman who sits in my chair leaves knowing she didn't have to choose between boujee and kind.",
       },
     ],
-    visual: ASSETS.studio,
+    visual: ASSETS.team,
   },
   chair: {
     label: "What Happens In My Chair",

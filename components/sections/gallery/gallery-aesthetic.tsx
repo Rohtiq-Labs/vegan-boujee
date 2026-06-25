@@ -7,22 +7,23 @@ export const GalleryAesthetic = (): React.JSX.Element => {
 
   return (
     <section className="gl-aesthetic" aria-labelledby="gl-aesthetic-label">
-      <Reveal>
+      <Reveal variant="text">
         <p className="section-label section-label--on-blush" id="gl-aesthetic-label">
           {aesthetic.label}
         </p>
       </Reveal>
-      <Reveal delay={1}>
+      <Reveal variant="text" delay={1}>
         <p className="gl-aesthetic-tagline">{aesthetic.tagline}</p>
       </Reveal>
       <div className="gl-aesthetic-mosaic">
         {aesthetic.moments.map((moment, index) => (
           <Reveal
             key={moment.mood}
+            variant="fade"
             delay={(index % 5) as 0 | 1 | 2 | 3 | 4}
-            className={`gl-aesthetic-cell gl-aesthetic-cell--${index}`}
+            className={`gl-aesthetic-cell gl-aesthetic-cell--${index} motion-lift`}
           >
-            <div className="gl-aesthetic-media">
+            <div className="gl-aesthetic-media interactive-media">
               <MediaVisual src={moment.src} ariaLabel={moment.ariaLabel} />
             </div>
             <span className="gl-aesthetic-mood">{moment.mood}</span>

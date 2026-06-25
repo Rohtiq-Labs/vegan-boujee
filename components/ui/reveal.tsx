@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useInView } from "@/hooks/use-in-view";
+
+export type RevealVariant =
+  | "fade"
+  | "text"
+  | "image"
+  | "image-left"
+  | "image-right"
+  | "left"
+  | "right";
 
 type RevealProps = {
   children: React.ReactNode;
   className?: string;
   delay?: 0 | 1 | 2 | 3 | 4;
+  variant?: RevealVariant;
 };
 
 const delayClass: Record<NonNullable<RevealProps["delay"]>, string> = {
@@ -16,36 +26,28 @@ const delayClass: Record<NonNullable<RevealProps["delay"]>, string> = {
   4: "reveal-delay-4",
 };
 
+const variantClass: Record<RevealVariant, string> = {
+  fade: "reveal--fade",
+  text: "reveal--text",
+  image: "reveal--image",
+  "image-left": "reveal--image reveal--image-left",
+  "image-right": "reveal--image reveal--image-right",
+  left: "reveal--left",
+  right: "reveal--right",
+};
+
 export const Reveal = ({
   children,
   className = "",
   delay = 0,
+  variant = "fade",
 }: RevealProps): React.JSX.Element => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, inView } = useInView();
 
   return (
     <div
       ref={ref}
-      className={`reveal ${delayClass[delay]} ${className}`.trim()}
+      className={`reveal ${variantClass[variant]} ${delayClass[delay]} ${inView ? "visible" : ""} ${className}`.trim()}
     >
       {children}
     </div>

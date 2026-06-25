@@ -1,23 +1,28 @@
+"use client";
+
 import { ASSETS } from "@/data/assets";
 import { CHANTEL } from "@/data/site-content";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { MediaVideo } from "@/components/ui/media-video";
+import { ParallaxLayer } from "@/components/ui/parallax-layer";
 import { Reveal } from "@/components/ui/reveal";
 
 export const Booking = (): React.JSX.Element => {
   return (
     <section className="booking" id="book">
       <div className="booking-bg" aria-hidden>
-        <MediaVideo
-          src={ASSETS.booking}
-          ariaLabel="Vegan and Boujee studio atmosphere"
-        />
+        <ParallaxLayer speed={0.16}>
+          <MediaVideo
+            src={ASSETS.booking}
+            ariaLabel="Vegan and Boujee studio atmosphere"
+          />
+        </ParallaxLayer>
         <div className="booking-bg-overlay" />
       </div>
       <div className="petal petal-1" aria-hidden />
       <div className="petal petal-2" aria-hidden />
       <div className="booking-inner">
-        <Reveal>
+        <Reveal variant="fade">
           <div className="booking-rosette">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
               <path
@@ -29,25 +34,25 @@ export const Booking = (): React.JSX.Element => {
             </svg>
           </div>
         </Reveal>
-        <Reveal delay={1}>
+        <Reveal variant="text" delay={1}>
           <h2>
             Your Chair Is
             <br />
             <em>Waiting.</em>
           </h2>
         </Reveal>
-        <Reveal delay={2}>
+        <Reveal variant="text" delay={2}>
           <p className="booking-voice">
             &ldquo;{CHANTEL.bookingNote}&rdquo;
           </p>
         </Reveal>
-        <Reveal delay={3}>
+        <Reveal variant="fade" delay={3}>
           <div className="booking-actions">
-            <a href="/contact" className="btn-primary">
+            <a href="/contact" className="btn-primary motion-glow">
               Book With Chantel
               <ArrowIcon />
             </a>
-            <a href="/about" className="btn-outline">
+            <a href="/about" className="btn-outline motion-glow">
               Read Her Story
             </a>
           </div>

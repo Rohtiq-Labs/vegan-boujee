@@ -45,13 +45,13 @@ export const isVideoSrc = (src: MediaSrc): src is VideoSrc =>
   src.endsWith(".mp4");
 
 export const ASSETS = {
-  hero: VIDEOS[0],
+  hero: VIDEOS[5],
   heroImage: IMAGES.studio,
   studio: IMAGES.studio,
   founder: IMAGES.team,
   team: IMAGES.team,
   founderPortrait: IMAGES.founderPortrait,
-  philosophy: IMAGES.work[0],
+  philosophy: IMAGES.team,
   clientMoments: IMAGES.work[1],
   transformations: [
     IMAGES.work[0],
@@ -72,8 +72,9 @@ export const ASSETS = {
     IMAGES.work[8],
   ],
   hairServices: IMAGES.hairServices,
+  booking: VIDEOS[2],
   videos: {
-    hero: VIDEOS[0],
+    hero: VIDEOS[5],
     founder: VIDEOS[1],
     transformations: [VIDEOS[2], VIDEOS[3], VIDEOS[4], VIDEOS[5], VIDEOS[6]] as const,
   },

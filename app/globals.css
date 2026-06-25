@@ -50,10 +50,27 @@ nav {
 }
 
 nav.scrolled {
-  background: rgba(247, 244, 240, 0.92);
+  background: var(--cream);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201, 138, 150, 0.15);
+  box-shadow: 0 8px 24px rgba(45, 36, 31, 0.04);
+}
+
+nav:has(.nav-toggle[aria-expanded="true"]) {
+  background: var(--cream);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 138, 150, 0.15);
+}
+
+nav:has(.nav-toggle[aria-expanded="true"]) .nav-toggle {
+  border-color: rgba(201, 138, 150, 0.4);
+  background: var(--cream);
+}
+
+nav:has(.nav-toggle[aria-expanded="true"]) .nav-toggle-bar {
+  background: var(--bark);
 }
 
 .nav-logo {
@@ -153,7 +170,8 @@ nav.scrolled .nav-cta {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 7px;
+  align-items: center;
+  gap: 5px;
   width: 44px;
   height: 44px;
   padding: 10px;
@@ -172,12 +190,13 @@ nav.scrolled .nav-cta {
 
 nav.scrolled .nav-toggle {
   border-color: rgba(201, 138, 150, 0.4);
+  background: var(--cream);
 }
 
 .nav-toggle-bar {
   display: block;
-  width: 100%;
-  height: 1px;
+  width: 18px;
+  height: 1.5px;
   background: var(--cream);
   transition: transform 0.3s, opacity 0.3s;
 }
@@ -186,12 +205,16 @@ nav.scrolled .nav-toggle-bar {
   background: var(--bark);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:first-child {
-  transform: translateY(4px) rotate(45deg);
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:last-child {
-  transform: translateY(-4px) rotate(-45deg);
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 .nav-mobile {
@@ -515,12 +538,14 @@ nav.scrolled .nav-toggle-bar {
 
 .philosophy-visual {
   position: relative;
-  margin-bottom: 56px;
+  margin-top: 56px;
 }
 
 @media (min-width: 900px) {
   .philosophy-visual {
-    margin-bottom: 0;
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0;
     padding: 60px 60px 60px 80px;
   }
 }
@@ -558,11 +583,13 @@ nav.scrolled .nav-toggle-bar {
 }
 
 .philosophy-text {
-  padding: 40px 0 0;
+  padding: 0;
 }
 
 @media (min-width: 900px) {
   .philosophy-text {
+    grid-column: 2;
+    grid-row: 1;
     padding: 60px 80px 60px 40px;
   }
 }
@@ -931,8 +958,15 @@ nav.scrolled .nav-toggle-bar {
 }
 
 .moments-visual {
-  position: sticky;
-  top: 100px;
+  position: relative;
+  z-index: 0;
+}
+
+@media (min-width: 900px) {
+  .moments-visual {
+    position: sticky;
+    top: 100px;
+  }
 }
 
 .moments-visual-frame {
@@ -958,6 +992,8 @@ nav.scrolled .nav-toggle-bar {
   flex-direction: column;
   gap: 40px;
   padding: 8px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .moment-entry {
@@ -1063,11 +1099,24 @@ nav.scrolled .nav-toggle-bar {
   margin: 0 auto;
 }
 
+.founder-text {
+  order: 1;
+}
+
+.founder-portrait {
+  order: 2;
+}
+
 @media (min-width: 900px) {
   .founder-inner {
     grid-template-columns: 5fr 7fr;
     gap: 80px;
     align-items: center;
+  }
+
+  .founder-text,
+  .founder-portrait {
+    order: unset;
   }
 }
 
@@ -1174,42 +1223,6 @@ nav.scrolled .nav-toggle-bar {
   color: var(--rose);
 }
 
-.founder-values {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-@media (min-width: 600px) {
-  .founder-values {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px 32px;
-  }
-}
-
-.founder-value {
-  padding: 20px 0 0;
-  border-top: 1px solid rgba(201, 138, 150, 0.25);
-}
-
-.founder-value-title {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--bark);
-  margin-bottom: 6px;
-}
-
-.founder-value-desc {
-  font-size: 0.88rem;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
 .founder-story-link {
   display: inline-block;
   margin-top: 40px;
@@ -1239,6 +1252,25 @@ nav.scrolled .nav-toggle-bar {
   overflow: hidden;
 }
 
+.booking-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.booking-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 244, 240, 0.72) 0%,
+    rgba(247, 244, 240, 0.88) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
 .booking::before {
   content: "";
   position: absolute;
@@ -1247,11 +1279,12 @@ nav.scrolled .nav-toggle-bar {
   right: 0;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--rose), transparent);
+  z-index: 2;
 }
 
 .booking-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -1352,6 +1385,7 @@ nav.scrolled .nav-toggle-bar {
   border-radius: 50%;
   background: rgba(201, 138, 150, 0.06);
   pointer-events: none;
+  z-index: 1;
 }
 
 .petal-1 {

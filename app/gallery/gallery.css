@@ -29,20 +29,24 @@
   border-color: var(--rose);
 }
 
-/* ─── HERO ───────────────────────────────────────────────────────── */
+/* ─── HERO: mobile overlay + desktop split ─────────────────────── */
 .gl-hero {
   position: relative;
-  min-height: 92vh;
-  min-height: 92svh;
+  height: 70vh;
+  height: 70svh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background: var(--bark);
+  isolation: isolate;
+  z-index: 1;
 }
 
 .gl-hero-media {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
 .gl-hero-media .media-video,
@@ -55,34 +59,68 @@
 .gl-hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(45, 36, 31, 0.92) 0%,
-    rgba(45, 36, 31, 0.35) 50%,
-    rgba(45, 36, 31, 0.15) 100%
-  );
+  background: rgba(45, 36, 31, 0.58);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.gl-hero-content {
+.gl-hero-text {
   position: relative;
   z-index: 2;
-  padding: 120px 32px 80px;
-  max-width: 720px;
+  width: 100%;
+  padding: 0 32px;
+  text-align: center;
+}
+
+.gl-hero-text .section-label {
+  justify-content: center;
 }
 
 @media (min-width: 900px) {
-  .gl-hero-content {
-    padding: 140px 80px 100px;
+  .gl-hero {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  .gl-hero-media {
+    position: relative;
+    inset: auto;
+    height: 100vh;
+    height: 100svh;
+    order: 2;
+  }
+
+  .gl-hero-shade {
+    background: linear-gradient(
+      to right,
+      var(--bark) 0%,
+      transparent 35%
+    );
+  }
+
+  .gl-hero-text {
+    padding: 120px 64px 80px 80px;
+    text-align: left;
+    order: 1;
+    align-self: center;
+  }
+
+  .gl-hero-text .section-label {
+    justify-content: flex-start;
   }
 }
 
 .gl-hero-title {
   font-family: var(--serif);
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.12;
   color: var(--cream);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 24px;
 }
 
@@ -92,18 +130,30 @@
 }
 
 .gl-hero-support {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 300;
-  color: rgba(247, 244, 240, 0.65);
+  color: rgba(247, 244, 240, 0.62);
   line-height: 1.75;
-  max-width: 520px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 900px) {
+  .gl-hero-support {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* ─── FEATURED: magazine grid ─────────────────────────────────────── */
 .gl-featured {
+  position: relative;
+  z-index: 2;
   padding: 100px 32px 120px;
   max-width: 1280px;
   margin: 0 auto;
+  background: var(--cream);
 }
 
 .gl-magazine {
@@ -220,6 +270,8 @@
 
 /* ─── STORIES ────────────────────────────────────────────────────── */
 .gl-stories {
+  position: relative;
+  z-index: 2;
   background: var(--bark);
   padding: 100px 32px 120px;
 }
@@ -262,6 +314,7 @@
 }
 
 .gl-story-visual {
+  position: relative;
   aspect-ratio: 4/5;
   border-radius: 2px;
   overflow: hidden;
@@ -298,9 +351,12 @@
 
 /* ─── REIMAGINED ─────────────────────────────────────────────────── */
 .gl-reimagined {
+  position: relative;
+  z-index: 2;
   padding: 120px 32px;
   max-width: 1200px;
   margin: 0 auto;
+  background: var(--cream);
 }
 
 .gl-reimagined-intro {
@@ -328,6 +384,7 @@
 }
 
 .gl-reimagined-media {
+  position: relative;
   aspect-ratio: 3/4;
   overflow: hidden;
   border-radius: 2px;
@@ -412,6 +469,7 @@
 }
 
 .gl-aesthetic-media {
+  position: relative;
   width: 100%;
   height: 100%;
   min-height: inherit;
@@ -441,55 +499,6 @@
   font-style: italic;
   color: var(--cream);
   text-shadow: 0 2px 12px rgba(45, 36, 31, 0.5);
-}
-
-/* ─── CLIENT WORDS ───────────────────────────────────────────────── */
-.gl-words {
-  padding: 120px 32px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.gl-words-journal {
-  margin-top: 56px;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.gl-word blockquote {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--bark);
-  line-height: 1.5;
-  margin: 0;
-  border: none;
-  padding: 0 0 0 24px;
-  border-left: 1px solid rgba(201, 138, 150, 0.35);
-}
-
-.gl-word--whisper blockquote {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  color: var(--muted);
-}
-
-.gl-word--standard blockquote {
-  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
-}
-
-.gl-word--emphasis blockquote {
-  font-size: clamp(1.45rem, 3vw, 1.85rem);
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.gl-word--1 {
-  padding-left: 10%;
-}
-
-.gl-word--2 {
-  padding-right: 8%;
 }
 
 /* ─── CLOSING ────────────────────────────────────────────────────── */

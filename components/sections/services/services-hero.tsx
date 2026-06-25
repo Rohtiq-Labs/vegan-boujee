@@ -12,7 +12,7 @@ export const ServicesHero = (): React.JSX.Element => {
         <MediaVisual src={hero.visual} ariaLabel="Vegan and Boujee experiences" />
         <div className="sv-hero-shade" />
       </div>
-      <div className="sv-hero-content">
+      <div className="sv-hero-text">
         <Reveal>
           <p className="section-label section-label--on-dark">{hero.label}</p>
         </Reveal>

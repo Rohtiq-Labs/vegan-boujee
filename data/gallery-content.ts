@@ -28,11 +28,6 @@ export type AestheticMoment = {
   ariaLabel: string;
 };
 
-export type ClientWord = {
-  quote: string;
-  tone: "whisper" | "standard" | "emphasis";
-};
-
 const { gallery } = ASSETS;
 
 export const GALLERY = {
@@ -165,16 +160,6 @@ export const GALLERY = {
         ariaLabel: "Finished look",
       },
     ] as AestheticMoment[],
-  },
-  words: {
-    label: "Client Words",
-    items: [
-      { quote: "I felt like myself again.", tone: "emphasis" },
-      { quote: "I left feeling more confident than I had in years.", tone: "standard" },
-      { quote: "This was more than a beauty appointment.", tone: "whisper" },
-      { quote: "Chantel has a way of making you feel seen.", tone: "standard" },
-      { quote: "For the first time, I loved what I saw in the mirror.", tone: "emphasis" },
-    ] as ClientWord[],
   },
   closing: {
     headline: "Ready For Your",

@@ -7,11 +7,6 @@ export type TransformStory = {
   ariaLabel: string;
 };
 
-export type FounderValue = {
-  title: string;
-  description: string;
-};
-
 export type ClientMoment = {
   quote: string;
   tone: "whisper" | "standard" | "emphasis";
@@ -85,25 +80,6 @@ export const pillarTags = [
   "Values-Aligned",
   "Vegan Products",
 ] as const;
-
-export const founderValues: FounderValue[] = [
-  {
-    title: "Conscious Beauty",
-    description: "Compassion in every product, every choice.",
-  },
-  {
-    title: "Vegan Products",
-    description: "Luxury without compromise.",
-  },
-  {
-    title: "Personalized Approach",
-    description: "Your energy. Your features. Your story.",
-  },
-  {
-    title: "Feminine Energy",
-    description: "Warm, expressive, unapologetically soft.",
-  },
-];
 
 export const CHANTEL = {
   name: "Chantel Justene",

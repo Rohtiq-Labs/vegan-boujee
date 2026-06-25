@@ -4,8 +4,6 @@ import { Footer } from "@/components/sections/footer/footer";
 import { AboutHero } from "@/components/sections/about/about-hero";
 import { AboutBeginning } from "@/components/sections/about/about-beginning";
 import { AboutChair } from "@/components/sections/about/about-chair";
-import { AboutValues } from "@/components/sections/about/about-values";
-import { AboutWords } from "@/components/sections/about/about-words";
 import { AboutStories } from "@/components/sections/about/about-stories";
 import { AboutClosing } from "@/components/sections/about/about-closing";
 import "./about.css";
@@ -18,8 +16,6 @@ export default function AboutPage(): React.JSX.Element {
         <AboutHero />
         <AboutBeginning />
         <AboutChair />
-        <AboutValues />
-        <AboutWords />
         <AboutStories />
         <AboutClosing />
       </main>

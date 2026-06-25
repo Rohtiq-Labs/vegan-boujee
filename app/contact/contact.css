@@ -99,61 +99,6 @@
   margin: 0 auto 40px;
 }
 
-/* ─── PROCESS: vertical editorial timeline ───────────────────────── */
-.ct-process {
-  padding: 120px 32px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.ct-process-steps {
-  list-style: none;
-  margin: 48px 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.ct-process-step {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 24px 32px;
-  padding: 40px 0;
-  border-bottom: 1px solid rgba(201, 138, 150, 0.15);
-  align-items: start;
-}
-
-.ct-process-step:first-child {
-  border-top: 1px solid rgba(201, 138, 150, 0.15);
-}
-
-.ct-process-num {
-  font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--rose);
-  line-height: 1;
-}
-
-.ct-process-title {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 3vw, 1.85rem);
-  font-weight: 300;
-  color: var(--bark);
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.ct-process-detail {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.75;
-  margin: 0;
-}
-
 /* ─── VISIT: blush editorial grid ────────────────────────────────── */
 .ct-visit {
   background: linear-gradient(165deg, var(--blush-soft) 0%, var(--blush) 100%);
@@ -234,52 +179,6 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.72rem;
-}
-
-/* ─── BEFORE YOU BOOK ────────────────────────────────────────────── */
-.ct-before {
-  padding: 100px 32px 120px;
-  background: var(--cream);
-}
-
-.ct-before-inner {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.ct-before-intro {
-  margin-top: 20px;
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 48px;
-}
-
-.ct-before-list {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-}
-
-.ct-before-title {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--bark);
-  margin-bottom: 10px;
-}
-
-.ct-before-text {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.8;
-  margin: 0;
-  padding-left: 20px;
-  border-left: 2px solid rgba(201, 138, 150, 0.25);
 }
 
 /* ─── NOTE FROM CHANTEL: split dark ──────────────────────────────── */

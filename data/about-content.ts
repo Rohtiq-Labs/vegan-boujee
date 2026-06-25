@@ -1,10 +1,4 @@
 import { ASSETS, type MediaSrc } from "@/data/assets";
-import { CHANTEL } from "@/data/site-content";
-
-export type AboutValue = {
-  title: string;
-  thought: string;
-};
 
 export type ChairFeeling = {
   word: string;
@@ -16,10 +10,6 @@ export type AboutStory = {
   shift: string;
   src: MediaSrc;
   ariaLabel: string;
-};
-
-export type PullQuote = {
-  text: string;
 };
 
 export const ABOUT = {
@@ -80,66 +70,6 @@ export const ABOUT = {
       },
     ] as ChairFeeling[],
     visual: ASSETS.gallery[2],
-  },
-  values: {
-    label: "What I Stand For",
-    items: [
-      {
-        title: "Conscious Beauty",
-        thought:
-          "Every product, every choice — aligned with compassion. Beauty that feels good in your bones.",
-      },
-      {
-        title: "Self-Expression",
-        thought:
-          "Your look should sound like you. Not a trend. Not a template. You.",
-      },
-      {
-        title: "Compassion",
-        thought:
-          "Cruelty-free isn't a marketing word here. It's a non-negotiable.",
-      },
-      {
-        title: "Confidence",
-        thought:
-          "The mirror is just the beginning. What matters is how you walk out the door.",
-      },
-      {
-        title: "Personal Transformation",
-        thought:
-          "Identity shifts happen in this chair. I've watched it hundreds of times.",
-      },
-      {
-        title: "Feminine Energy",
-        thought:
-          "Soft is not weak. Expressive is not excessive. Feminine is power.",
-      },
-      {
-        title: "Intentional Luxury",
-        thought:
-          "Boujee without the guilt. Elevated without the pretense.",
-      },
-    ] as AboutValue[],
-  },
-  words: {
-    label: "Words From Chantel",
-    salutation: "Hey love,",
-    paragraphs: [
-      "If you're reading this, you're probably looking for more than a hair appointment. Good — because that's all I offer.",
-      "I started Vegan & Boujee for women who are tired of choosing. Tired of picking between glamorous and conscious, between soft and powerful, between looking incredible and sleeping well at night.",
-      "My chair is where those false choices end. Where you can be boujee and kind-hearted. Where your transformation is personal, not prescribed.",
-      "I don't want you to just love your hair. I want you to walk out feeling like the most confident version of yourself — the one you've been talking yourself into becoming.",
-    ],
-    pullQuotes: [
-      {
-        text: "Beauty should never cost you your values.",
-      },
-      {
-        text: "Come as you are. That's not marketing — it's how I run my studio.",
-      },
-    ] as PullQuote[],
-    signoff: CHANTEL.name,
-    handle: CHANTEL.handle,
   },
   stories: {
     label: "Real Women, Real Transformations",

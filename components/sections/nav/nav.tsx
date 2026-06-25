@@ -101,6 +101,7 @@ export const Nav = ({ bookHref = CONTACT_PATH }: NavProps): React.JSX.Element =>
           >
             <span className="nav-toggle-bar" />
             <span className="nav-toggle-bar" />
+            <span className="nav-toggle-bar" />
           </button>
         </div>
       </nav>

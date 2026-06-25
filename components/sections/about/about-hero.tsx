@@ -5,12 +5,12 @@ import { Reveal } from "@/components/ui/reveal";
 export const AboutHero = (): React.JSX.Element => {
   return (
     <section className="ab-hero" aria-labelledby="ab-hero-title">
-      <div className="ab-hero-portrait">
+      <div className="ab-hero-media" aria-hidden>
         <MediaVisual
           src={ABOUT.hero.portrait}
           ariaLabel="Chantel Justene, founder of Vegan and Boujee"
         />
-        <div className="ab-hero-portrait-shade" aria-hidden />
+        <div className="ab-hero-shade" />
       </div>
       <div className="ab-hero-text">
         <Reveal>

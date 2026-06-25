@@ -123,33 +123,6 @@ export const SERVICES = {
     ],
     visual: ASSETS.gallery[5],
   },
-  consultation: {
-    label: "Before We Begin",
-    title: "The Consultation Experience",
-    intro:
-      "Every transformation at Vegan & Boujee starts with a conversation — not a clipboard.",
-    points: [
-      {
-        title: "Personalized Recommendations",
-        text: "We discuss what will work for your hair, your features, and your lifestyle — not what's trending.",
-      },
-      {
-        title: "Your Hair Goals",
-        text: "Where you are now, where you want to be, and the honest path between the two.",
-      },
-      {
-        title: "Lifestyle Considerations",
-        text: "Maintenance, time, budget — beauty should fit your life, not complicate it.",
-      },
-      {
-        title: "Beauty Preferences",
-        text: "Soft or bold. Natural or expressive. This is your story to tell.",
-      },
-    ],
-    closing:
-      "You'll leave knowing exactly what to expect — and feeling genuinely cared for before we even begin.",
-    visual: ASSETS.founder,
-  },
   pathways: [
     {
       id: "major",

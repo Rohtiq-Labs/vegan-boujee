@@ -1,10 +1,19 @@
+import { ASSETS } from "@/data/assets";
 import { CHANTEL } from "@/data/site-content";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
+import { MediaVideo } from "@/components/ui/media-video";
 import { Reveal } from "@/components/ui/reveal";
 
 export const Booking = (): React.JSX.Element => {
   return (
     <section className="booking" id="book">
+      <div className="booking-bg" aria-hidden>
+        <MediaVideo
+          src={ASSETS.booking}
+          ariaLabel="Vegan and Boujee studio atmosphere"
+        />
+        <div className="booking-bg-overlay" />
+      </div>
       <div className="petal petal-1" aria-hidden />
       <div className="petal petal-2" aria-hidden />
       <div className="booking-inner">

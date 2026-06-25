@@ -8,11 +8,11 @@ export const GalleryHero = (): React.JSX.Element => {
 
   return (
     <section className="gl-hero" aria-labelledby="gl-hero-title">
-      <div className="gl-hero-media">
+      <div className="gl-hero-media" aria-hidden>
         <MediaVisual src={hero.visual} ariaLabel="Vegan and Boujee gallery" />
-        <div className="gl-hero-shade" aria-hidden />
+        <div className="gl-hero-shade" />
       </div>
-      <div className="gl-hero-content">
+      <div className="gl-hero-text">
         <Reveal>
           <p className="section-label section-label--on-dark">{hero.label}</p>
         </Reveal>

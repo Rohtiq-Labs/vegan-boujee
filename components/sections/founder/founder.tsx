@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ASSETS } from "@/data/assets";
-import { CHANTEL, founderValues } from "@/data/site-content";
+import { CHANTEL } from "@/data/site-content";
 import { MediaVisual } from "@/components/ui/media-visual";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -50,16 +50,6 @@ export const Founder = (): React.JSX.Element => {
                 &ldquo;{CHANTEL.signatureQuote}&rdquo;
               </blockquote>
               <cite>— {CHANTEL.name}</cite>
-            </div>
-          </Reveal>
-          <Reveal delay={4}>
-            <div className="founder-values">
-              {founderValues.map((value) => (
-                <div key={value.title} className="founder-value">
-                  <span className="founder-value-title">{value.title}</span>
-                  <p className="founder-value-desc">{value.description}</p>
-                </div>
-              ))}
             </div>
           </Reveal>
           <Reveal delay={4}>

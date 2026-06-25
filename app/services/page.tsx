@@ -4,7 +4,6 @@ import { Footer } from "@/components/sections/footer/footer";
 import { ServicesHero } from "@/components/sections/services/services-hero";
 import { ServicesOverview } from "@/components/sections/services/services-overview";
 import { ServicesSpotlight } from "@/components/sections/services/services-spotlight";
-import { ServicesConsultation } from "@/components/sections/services/services-consultation";
 import { ServicesGuide, ServicesClosing } from "@/components/sections/services/services-guide";
 import "./services.css";
 
@@ -16,7 +15,6 @@ export default function ServicesPage(): React.JSX.Element {
         <ServicesHero />
         <ServicesOverview />
         <ServicesSpotlight />
-        <ServicesConsultation />
         <ServicesGuide />
         <ServicesClosing />
       </main>

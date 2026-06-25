@@ -6,7 +6,6 @@ import { GalleryFeatured } from "@/components/sections/gallery/gallery-featured"
 import { GalleryStories } from "@/components/sections/gallery/gallery-stories";
 import { GalleryReimagined } from "@/components/sections/gallery/gallery-reimagined";
 import { GalleryAesthetic } from "@/components/sections/gallery/gallery-aesthetic";
-import { GalleryWords } from "@/components/sections/gallery/gallery-words";
 import "./gallery.css";
 
 export default function GalleryPage(): React.JSX.Element {
@@ -19,7 +18,6 @@ export default function GalleryPage(): React.JSX.Element {
         <GalleryStories />
         <GalleryReimagined />
         <GalleryAesthetic />
-        <GalleryWords />
         <GalleryClosing />
       </main>
       <Footer variant="gallery" />

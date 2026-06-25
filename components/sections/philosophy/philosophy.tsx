@@ -6,15 +6,6 @@ import { Reveal } from "@/components/ui/reveal";
 export const Philosophy = (): React.JSX.Element => {
   return (
     <section className="philosophy" id="about">
-      <Reveal className="philosophy-visual">
-        <div className="philosophy-image-wrap">
-          <MediaVisual
-            src={ASSETS.philosophy}
-            ariaLabel="Vegan and Boujee philosophy"
-          />
-        </div>
-        <div className="philo-float-tag">{CHANTEL.philosophyNote}</div>
-      </Reveal>
       <div className="philosophy-text">
         <Reveal>
           <p className="section-label">Chantel&apos;s Philosophy</p>
@@ -51,6 +42,15 @@ export const Philosophy = (): React.JSX.Element => {
           </div>
         </Reveal>
       </div>
+      <Reveal className="philosophy-visual">
+        <div className="philosophy-image-wrap">
+          <MediaVisual
+            src={ASSETS.philosophy}
+            ariaLabel="Chantel and the Vegan and Boujee team"
+          />
+        </div>
+        <div className="philo-float-tag">{CHANTEL.philosophyNote}</div>
+      </Reveal>
     </section>
   );
 };

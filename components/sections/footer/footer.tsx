@@ -22,8 +22,7 @@ const homeLinks: FooterLink[] = [
 const aboutLinks: FooterLink[] = [
   { href: "/about#ab-beginning-label", label: "The Beginning" },
   { href: "/about#ab-chair-label", label: "The Experience" },
-  { href: "/about#ab-values-label", label: "Values" },
-  { href: "/about#ab-words-label", label: "From Chantel" },
+  { href: "/about#ab-stories-label", label: "Transformations" },
   {
     href: "https://www.veganandboujee.com/hair-lash-lift-services",
     label: "Book Now",
@@ -35,7 +34,7 @@ const servicesLinks: FooterLink[] = [
   { href: "/services#hair", label: "Hair" },
   { href: "/services#brows-lashes", label: "Brows & Lashes" },
   { href: "/services#beauty-enhancing", label: "Enhancing" },
-  { href: "/services#sv-consultation-label", label: "Consultation" },
+  { href: "/contact", label: "Consultation" },
   {
     href: "https://www.veganandboujee.com/hair-lash-lift-services",
     label: "Book Now",
@@ -44,9 +43,7 @@ const servicesLinks: FooterLink[] = [
 ];
 
 const contactLinks: FooterLink[] = [
-  { href: "/contact#ct-process-label", label: "The Process" },
   { href: "/contact#ct-visit-label", label: "Visit" },
-  { href: "/contact#ct-before-label", label: "Before You Book" },
   { href: "/contact#ct-note-label", label: "From Chantel" },
   { href: "/contact", label: "Book Now" },
 ];
@@ -55,7 +52,7 @@ const galleryLinks: FooterLink[] = [
   { href: "/gallery#gl-featured-label", label: "Curated" },
   { href: "/gallery#gl-stories-label", label: "Stories" },
   { href: "/gallery#gl-aesthetic-label", label: "Aesthetic" },
-  { href: "/gallery#gl-words-label", label: "Client Words" },
+  { href: "/gallery#gl-reimagined-label", label: "Reimagined" },
   { href: "/contact", label: "Book Now" },
 ];
 
